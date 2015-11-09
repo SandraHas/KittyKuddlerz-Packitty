@@ -7,7 +7,11 @@ public class Ghost_eyes : MonoBehaviour {
 	public bool openLeft;
 	public bool openRight;
 	public bool openForward;
-	float forwardLenght = 1f;	//How far the ghost can see
+	float forwardLenght;	//How far the ghost can see
+
+	void Start () {
+		forwardLenght = GetComponent<Renderer>().bounds.size.x;
+	}
 
 	void FixedUpdate (){
 		RaycastHit hit;
